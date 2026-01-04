@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px; /* Standard vertical width */
+  height: 8px; /* Standard horizontal height */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cccccc; /* Medium gray default handle */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9; /* Darker gray on hover */
+}
+
+/* Handle for dark mode or specific components (example) */
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark-scroll::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* --- Global Styles --- */
+
+/* Resetting default body margin and setting font stack */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Facebook background color */
+  color: #1c1e21; /* Default Facebook text color */
+  line-height: 1.34;
+}
+
+/* Ensure images are fluid and don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Reusable Tailwind Component Overrides (If needed) --- */
+
+/* Focus state consistency */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e7f3ff, 0 0 0 4px #007bff; /* Example: standard blue focus ring */
+}
+
+/* A commonly used text input style (Facebook-like) */
+.input-standard {
+  @apply w-full border border-gray-300 rounded-lg px-4 py-3 text-base;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-standard:focus {
+  @apply border-blue-500 shadow-none;
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); /* Light blue glow */
+}
+
+/* A common button style (Primary Blue) */
+.btn-primary {
+  @apply bg-blue-500 text-white font-bold rounded-lg px-4 py-2.5 transition-colors duration-150 ease-in-out;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  @apply bg-blue-600;
+}
+
+.btn-primary:active {
+  @apply bg-blue-700;
+}
+
+/* A common secondary button style (Gray) */
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 font-medium rounded-lg px-4 py-2.5 transition-colors duration-150 ease-in-out;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-300;
+}
+
+/* Standard Card/Panel styling */
+.card-standard {
+  @apply bg-white rounded-lg shadow-md;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Utility to ensure full viewport height for root container */
+#root {
+  min-height: 100vh;
+}
+
+/* Utility for hiding elements visually but keeping them for screen readers */
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
